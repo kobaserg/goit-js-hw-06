@@ -15,6 +15,7 @@ const images = [
 
 const imagesGallery = document.querySelector('.gallery');
 
+
 const imageList = images.map(image => {
 
   const imageArr = document.createElement('li');
@@ -26,3 +27,6 @@ const imageList = images.map(image => {
 })
 
 imagesGallery.append(...imageList)
+
+  
+  
