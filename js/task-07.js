@@ -1,6 +1,6 @@
 const inputRange = document.querySelector("#font-size-control");
 
-inputRange.addEventListener('mouseup', onChangeTextFontSize);
+inputRange.addEventListener('input', onChangeTextFontSize);
 
 function onChangeTextFontSize() {   
     const valueTextFontSize = Number(inputRange.value);

@@ -6,7 +6,7 @@ inputEl.addEventListener('blur', inputBlur);
 let countLetter = 0;
 
 function inputFocus() {
-    const inputString = addEventListener('keydown', event => {
+    const inputString = addEventListener('input', event => {
         countLetter += 1;
 })  
 }
