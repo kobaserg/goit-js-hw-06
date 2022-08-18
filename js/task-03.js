@@ -17,15 +17,16 @@ const imagesGallery = document.querySelector('.gallery');
 imagesGallery.style.display = 'flex';
 imagesGallery.style.flexDirection = 'column';
 
-const imageList = images.map(image => {
+const listAll = [];
+
+for (let i = 0; i < images.length; i += 1) {
   const imageArr = document.createElement('li');
-  // imageArr.classList.add('list');
   imageArr.style.listStyle = 'none';
   imageArr.style.marginTop = '30px';
-  const imageItemList = `<img width=200 src=${image.url} alt="${image.alt}">`;
-  imageArr.insertAdjacentHTML('afterbegin', imageItemList);
 
-  return imageArr;
-});
+  imageArr.innerHTML = `<img width=200 src=${images[i].url} alt="${images[i].alt}">`;
 
-imagesGallery.append(...imageList);
+  listAll.push(imageArr.outerHTML);
+}
+
+imagesGallery.insertAdjacentHTML('afterbegin', listAll.join(''));
