@@ -13,20 +13,15 @@ const images = [
   },
 ];
 
-const imagesGallery = document.querySelector('.gallery');
-imagesGallery.style.display = 'flex';
-imagesGallery.style.flexDirection = 'column';
+const gallery = document.querySelector('.gallery');
 
-const listAll = [];
+const listGallery = item => {
+  return `<li>
+  <img width='200' src="${item.url}" alt="${item.alt}"/>
+  </li>`;
+};
 
-for (let i = 0; i < images.length; i += 1) {
-  const imageArr = document.createElement('li');
-  imageArr.style.listStyle = 'none';
-  imageArr.style.marginTop = '30px';
+const marcup = images.map(listGallery).join('');
 
-  imageArr.innerHTML = `<img width=200 src=${images[i].url} alt="${images[i].alt}">`;
-
-  listAll.push(imageArr.outerHTML);
-}
-
-imagesGallery.insertAdjacentHTML('afterbegin', listAll.join(''));
+console.log(marcup);
+gallery.insertAdjacentHTML('afterbegin', marcup);
